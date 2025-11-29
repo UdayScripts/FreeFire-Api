@@ -215,7 +215,7 @@ def get_player_stat():
 def get_account_info():
     try:
         # Get parameters with defaults
-        server = request.args.get('server', 'IND').upper()
+        server = request.args.get('region', 'IND').upper()
         uid = request.args.get('uid')
         need_gallery_info = request.args.get('need_gallery_info', False)
         call_sign_src = request.args.get('call_sign_src', 7)
