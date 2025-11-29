@@ -18,7 +18,7 @@ CORS(app)
 
 
 
-@app.route('/get_search_account_by_keyword', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def get_search_account_by_keyword():
     try:
         # Get request parameters
@@ -59,7 +59,7 @@ def get_search_account_by_keyword():
     except Exception as e:
         return json.dumps({"error": f"Internal server error: {str(e)}"}, indent=2), 500, {'Content-Type': 'application/json; charset=utf-8'}
 
-@app.route('/get_player_stats', methods=['GET'])
+@app.route('/api/account/stats', methods=['GET'])
 def get_player_stat():
     try:
         # Get and validate parameters
@@ -211,7 +211,7 @@ def get_player_stat():
             "message": "An unexpected error occurred while processing your request"
         }), 500
 
-@app.route('/get_player_personal_show', methods=['GET'])
+@app.route('/api/account', methods=['GET'])
 def get_account_info():
     try:
         # Get parameters with defaults
